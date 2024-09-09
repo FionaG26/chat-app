@@ -1,7 +1,25 @@
-<div>
-  <div *ngFor="let msg of messages">
-    <app-message [content]="msg"></app-message>
+<div class="chat-container">
+  <div class="chat-header">
+    <h1>Chat Application</h1>
+    <div class="user-info">
+      <!-- Placeholder for user profile or settings -->
+      <span>User: {{currentUser}}</span>
+    </div>
   </div>
-  <input [(ngModel)]="message" placeholder="Type a message" />
-  <button (click)="sendMessage()">Send</button>
+
+  <div class="chat-body">
+    <div class="message" *ngFor="let message of messages" [ngClass]="{'sent': message.user === currentUser, 'received': message.user !== currentUser}">
+      <div class="message-content">{{message.text}}</div>
+      <div class="message-meta">
+        <span class="message-timestamp">{{message.timestamp | date: 'shortTime'}}</span>
+        <span *ngIf="message.user !== currentUser">{{message.user}}</span>
+      </div>
+    </div>
+    <div *ngIf="isTyping" class="typing-indicator">User is typing...</div>
+  </div>
+
+  <div class="chat-footer">
+    <input type="text" [(ngModel)]="newMessage" (keyup.enter)="sendMessage()" placeholder="Type your message..." (input)="onTyping()" />
+    <button (click)="sendMessage()">Send</button>
+  </div>
 </div>
