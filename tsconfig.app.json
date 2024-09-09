@@ -1,23 +1,14 @@
 {
+  "extends": "./tsconfig.json",
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./out-tsc",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "target": "es2015",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-    "sourceMap": true,
-    "declaration": false,
-    "importHelpers": true,
-    "skipLibCheck": true
+    "outDir": "./out-tsc/app",
+    "types": []
   },
-  "exclude": [
-    "node_modules",
-    "out-tsc"
+  "files": [
+    "src/main.ts",
+    "src/polyfills.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
   ]
 }
