@@ -112,3 +112,27 @@
     font-size: 0.9em;
   }
 }
+
+.messages {
+  height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.message-input {
+  display: flex;
+  margin-top: 10px;
+}
+
+.message-input input {
+  flex: 1;
+}
+
+.message-input button {
+  margin-left: 10px;
+}
