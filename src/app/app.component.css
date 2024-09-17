@@ -1,0 +1,182 @@
+/* General Layout */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.cta-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;  /* Darker blue on hover */
+}
+
+/* Features Section */
+.features-section {
+  padding: 50px;
+}
+
+.features-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feature {
+  width: 30%;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* Tabs Section */
+.tabs-section {
+  margin: 20px 0;
+}
+
+.tabs {
+  margin: 20px 0;
+}
+
+.tab-button {
+  padding: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+  background-color: #eee;
+  border: none;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.tab-button:hover {
+  background-color: #ccc;
+}
+
+.tab-content {
+  display: none;
+  margin: 20px 0;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Countdown Section */
+.countdown-section {
+  margin: 20px 0;
+}
+
+#countdown {
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Video Background Section */
+.video-section {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.video-background {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#playPauseBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+.social-links a {
+  margin: 0 10px;
+}
+
+/* Navigation and SVG Icons */
+nav a {
+  display: inline-flex; /* Allows for icon and text alignment */
+  align-items: center;  /* Vertically center the icon with text */
+  padding: 0 10px;      /* Spacing between the links */
+  text-decoration: none;
+  color: #333;
+}
+
+nav a svg {
+  margin-right: 8px;  /* Space between icon and text */
+  width: 24px;        /* Adjust icon width */
+  height: 24px;       /* Adjust icon height */
+  fill: currentColor; /* Makes the icon color inherit the link's text color */
+}
+
+/* Social Links SVG Styling */
+.social-links a svg {
+  width: 30px;        /* Adjust social media icon size */
+  height: 30px;
+  fill: #666;         /* Initial icon color */
+  transition: fill 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-links a:hover svg {
+  fill: #1DA1F2;      /* Change color on hover (example: Twitter blue) */
+}
