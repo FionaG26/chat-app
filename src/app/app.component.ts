@@ -18,8 +18,8 @@ export class AppComponent implements OnInit {
 
     tabButtons.forEach(button => {
       button.addEventListener('click', () => {
-        // Cast 'button' to HTMLElement to access 'dataset'
-        const targetTab = document.getElementById((button as HTMLElement).dataset.tab!);
+        // Cast 'button' to HTMLElement and access 'dataset' with bracket notation
+        const targetTab = document.getElementById((button as HTMLElement).dataset['tab']!);
         tabContents.forEach(content => content.classList.remove('active'));
         targetTab?.classList.add('active');
       });
