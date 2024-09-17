@@ -1,360 +1,273 @@
-<style>
-  :host {
-    --primary-color: #0066ff;
-    --secondary-color: #4a90e2;
-    --background-color: #f5f6fa;
-    --text-color: #333;
-    --light-gray: #f0f0f0;
-    --white: #fff;
-    --border-radius: 8px;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+<!DOCTYPE html>
+<html lang="en">
 
-    --bright-blue: oklch(51.01% 0.274 263.83);
-    --electric-violet: oklch(53.18% 0.28 296.97);
-    --french-violet: oklch(47.66% 0.246 305.88);
-    --vivid-pink: oklch(69.02% 0.277 332.77);
-    --hot-red: oklch(61.42% 0.238 15.34);
-    --orange-red: oklch(63.32% 0.24 31.68);
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatApp</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #0066ff;
+            --secondary-color: #4a90e2;
+            --background-color: #f5f6fa;
+            --text-color: #333;
+            --light-gray: #f0f0f0;
+            --white: #fff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
-    --gray-900: oklch(19.37% 0.006 300.98);
-    --gray-700: oklch(36.98% 0.014 302.71);
-    --gray-400: oklch(70.9% 0.015 304.04);
+            --bright-blue: oklch(51.01% 0.274 263.83);
+            --electric-violet: oklch(53.18% 0.28 296.97);
+            --french-violet: oklch(47.66% 0.246 305.88);
+            --vivid-pink: oklch(69.02% 0.277 332.77);
+            --hot-red: oklch(61.42% 0.238 15.34);
+            --orange-red: oklch(63.32% 0.24 31.68);
 
-    --red-to-pink-to-purple-vertical-gradient: linear-gradient(
-      180deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
+            --gray-900: oklch(19.37% 0.006 300.98);
+            --gray-700: oklch(36.98% 0.014 302.71);
+            --gray-400: oklch(70.9% 0.015 304.04);
 
-    --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
-      90deg,
-      var(--orange-red) 0%,
-      var(--vivid-pink) 50%,
-      var(--electric-violet) 100%
-    );
+            --red-to-pink-to-purple-vertical-gradient: linear-gradient(
+                180deg,
+                var(--orange-red) 0%,
+                var(--vivid-pink) 50%,
+                var(--electric-violet) 100%
+            );
 
-    --pill-accent: var(--bright-blue);
+            --red-to-pink-to-purple-horizontal-gradient: linear-gradient(
+                90deg,
+                var(--orange-red) 0%,
+                var(--vivid-pink) 50%,
+                var(--electric-violet) 100%
+            );
 
-    font-family: 'Inter', sans-serif;
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+            --pill-accent: var(--bright-blue);
 
-  header {
-    background-color: var(--primary-color);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--white);
-  }
+            font-family: 'Inter', sans-serif;
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
 
-  header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
+        header {
+            background-color: var(--primary-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+        }
 
-  header nav {
-    display: flex;
-    gap: 1.5rem;
-  }
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
 
-  header nav a {
-    color: var(--white);
-    text-decoration: none;
-    font-weight: 500;
-  }
+        header nav {
+            display: flex;
+            gap: 1.5rem;
+        }
 
-  main {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: var(--background-color);
-    padding: 2rem;
-    text-align: center;
-  }
+        header nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-  .hero {
-    background: url('hero-image.png') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 4rem 2rem;
-}
+        main {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: var(--background-color);
+            padding: 2rem;
+            text-align: center;
+        }
 
-  .hero-section {
-    max-width: 600px;
-  }
+        .hero {
+            background: url('hero-image.png') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
 
-  .hero-section h1 {
-    font-size: 2.5rem;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-  }
+        .hero-content h1 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
 
-  .hero-section p {
-    font-size: 1.25rem;
-    color: var(--text-color);
-    margin-bottom: 2rem;
-  }
+        .hero-content p {
+            font-size: 1.25rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+        }
 
-  .cta-button {
-    background-color: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-decoration: none;
-  }
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+        }
 
-  .cta-button:hover {
-    background-color: var(--secondary-color);
-  }
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
 
-  .features-section {
-    margin-top: 4rem;
-    padding: 2rem 0;
-    background-color: var(--light-gray);
-    width: 100%;
-  }
+        .features {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            background-color: var(--light-gray);
+            width: 100%;
+        }
 
-  .features-section h2 {
-    font-size: 2rem;
-    color: var(--text-color);
-    margin-bottom: 2rem;
-  }
+        .features h2 {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+        }
 
-  .features-list {
-    display: flex;
-    justify-content: space-around;
-    max-width: 800px;
-    margin: 0 auto;
-  }
+        .feature {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            flex: 1;
+            margin: 0 1rem;
+        }
 
-  .features-list .feature {
-    background: var(--white);
-    padding: 1rem;
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow);
-    text-align: center;
-    flex: 1;
-    margin: 0 1rem;
-  }
+        .feature h3 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
 
-  .features-list .feature h3 {
-    font-size: 1.25rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-  }
+        .testimonials h2 {
+            font-size: 2rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+        }
 
-    .testimonial {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.5s ease-in-out forwards;
-  }
+        .testimonial {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s ease-in-out forwards;
+        }
 
-  .testimonial:nth-child(1) {
-    animation-delay: 0.2s;
-  }
+        .testimonial:nth-child(1) {
+            animation-delay: 0.2s;
+        }
 
-  .testimonial:nth-child(2) {
-    animation-delay: 0.4s;
-  }
+        .testimonial:nth-child(2) {
+            animation-delay: 0.4s;
+        }
 
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-  /* Enhanced Accordion */
-  .accordion-item {
-    border-bottom: 1px solid var(--light-gray);
-    padding: 1rem 0;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-  .accordion-item:hover {
-    background-color: var(--gray-400);
-  }
+        .accordion-item {
+            border-bottom: 1px solid var(--light-gray);
+            padding: 1rem 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
 
-  .accordion-header::after {
-    content: "▼";
-    float: right;
-    transition: transform 0.3s;
-  }
+        .accordion-item:hover {
+            background-color: var(--gray-400);
+        }
 
-  .accordion-content {
-    display: none;
-    padding: 1rem 0;
-    color: var(--text-color);
-  }
+        .accordion-header::after {
+            content: "▼";
+            float: right;
+            transition: transform 0.3s;
+        }
 
-  .accordion-item.active .accordion-content {
-    display: block;
-  }
+        .accordion-content {
+            display: none;
+            padding: 1rem 0;
+            color: var(--text-color);
+        }
 
-  .accordion-item.active .accordion-header::after {
-    transform: rotate(180deg);
-  }
+        .accordion-item.active .accordion-content {
+            display: block;
+        }
 
-  footer {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+        .accordion-item.active .accordion-header::after {
+            transform: rotate(180deg);
+        }
 
-  footer a {
-    color: var(--white);
-    text-decoration: none;
-    margin: 0 1rem;
-  }
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-  .angular-logo {
-    max-width: 9.2rem;
-  }
+        footer a {
+            color: var(--white);
+            text-decoration: none;
+            margin: 0 1rem;
+        }
 
-  .content {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: 700px;
-    margin-bottom: 3rem;
-  }
+        @media screen and (max-width: 650px) {
+            .content {
+                flex-direction: column;
+                width: max-content;
+            }
+        }
+    </style>
+</head>
 
-  .content h1 {
-    margin-top: 1.75rem;
-  }
-
-  .content p {
-    margin-top: 1.5rem;
-  }
-
-  .divider {
-    width: 1px;
-    background: var(--red-to-pink-to-purple-vertical-gradient);
-    margin-inline: 0.5rem;
-  }
-
-  .pill-group {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-  }
-
-  .pill {
-    display: flex;
-    align-items: center;
-    --pill-accent: var(--bright-blue);
-    background: color-mix(in srgb, var(--pill-accent) 5%, transparent);
-    color: var(--pill-accent);
-    padding-inline: 0.75rem;
-    padding-block: 0.375rem;
-    border-radius: 2.75rem;
-    border: 0;
-    transition: background 0.3s ease;
-    font-size: 0.875rem;
-    font-weight: 500;
-    line-height: 1.4rem;
-    letter-spacing: -0.00875rem;
-    text-decoration: none;
-  }
-
-  .pill:hover {
-    background: color-mix(in srgb, var(--pill-accent) 15%, transparent);
-  }
-
-  .pill-group .pill:nth-child(6n + 1) {
-    --pill-accent: var(--bright-blue);
-  }
-  .pill-group .pill:nth-child(6n + 2) {
-    --pill-accent: var(--french-violet);
-  }
-  .pill-group .pill:nth-child(6n + 3),
-  .pill-group .pill:nth-child(6n + 4),
-  .pill-group .pill:nth-child(6n + 5) {
-    --pill-accent: var(--hot-red);
-  }
-
-  .pill-group svg {
-    margin-inline-start: 0.25rem;
-  }
-
-  .social-links {
-    display: flex;
-    align-items: center;
-    gap: 0.73rem;
-    margin-top: 1.5rem;
-  }
-
-  .social-links path {
-    transition: fill 0.3s ease;
-    fill: var(--gray-400);
-  }
-
-  .social-links a:hover svg path {
-    fill: var(--gray-900);
-  }
-
-  @media screen and (max-width: 650px) {
-    .content {
-      flex-direction: column;
-      width: max-content;
-    }
-
-    .divider {
-      height: 1px;
-      width: 100%;
-      background: var(--red-to-pink-to-purple-horizontal-gradient);
-      margin-block: 1.5rem;
-    }
-  }
-</style>
-
-<header>
+<body>
+    <header>
         <div class="logo">ChatApp</div>
         <nav>
             <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
                 </svg>
                 Home
             </a>
-            <a href="#">
+            <a href="#features">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M9 21h6v-1H9v1zm6.34-4h-.13A3 3 0 0 0 15 17H9a3 3 0 0 0-.21 0h-.13A5.99 5.99 0 0 0 2 12c0-3.31 2.69-6 6-6h8c3.31 0 6 2.69 6 6 0 2.98-2.16 5.44-5.02 5.94l-.64 1.06z"/>
+                    <path d="M9 21h6v-1H9v1zm6.34-4h-.13A3 3 0 0 0 15 17H9a3 3 0 0 0-.21 0h-.13A5.99 5.99 0 0 0 2 12c0-3.31 2.69-6 6-6h8c3.31 0 6 2.69 6 6 0 2.98-2.16 5.44-5.02 5.94l-.64 1.06z" />
                 </svg>
                 Features
             </a>
             <a href="#contact">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M20 8h-3V6a5 5 0 0 0-10 0v2H4v14h16V8zm-7 9h-2v-2h2v2zm0-4h-2v-4h2v4zm3-7h-8V6a3 3 0 0 1 6 0v2z"/>
+                    <path d="M20 8h-3V6a5 5 0 0 0-10 0v2H4v14h16V8zm-7 9h-2v-2h2v2zm0-4h-2v-4h2v4zm3-7h-8V6a3 3 0 0 1 6 0v2z" />
                 </svg>
                 Contact
             </a>
-            <a href="#">
+            <a href="#login">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                 </svg>
                 Login
             </a>
@@ -362,132 +275,53 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1>Your Compelling Headline</h1>
-                <p>A brief description that captures attention.</p>
-                <a href="#cta" class="cta-button">Call to Action</a>
+                <h1>Welcome to ChatApp</h1>
+                <p>Connect with your friends and family with ease.</p>
+                <a class="cta-button" href="#">Get Started</a>
             </div>
         </section>
 
-        <!-- Features Section -->
-        <section class="features">
-            <h2>Features & Benefits</h2>
-            <div class="feature">
-                <h3>Feature One</h3>
-                <p>Description of feature one.</p>
-            </div>
-            <div class="feature">
-                <h3>Feature Two</h3>
-                <p>Description of feature two.</p>
+        <section class="features" id="features">
+            <h2>Key Features</h2>
+            <div class="content">
+                <div class="feature">
+                    <h3>Instant Messaging</h3>
+                    <p>Communicate in real-time with your friends and family.</p>
+                </div>
+                <div class="feature">
+                    <h3>Group Chats</h3>
+                    <p>Create group conversations with multiple people at once.</p>
+                </div>
+                <div class="feature">
+                    <h3>Secure</h3>
+                    <p>All messages are end-to-end encrypted for your privacy.</p>
+                </div>
             </div>
         </section>
 
-        <!-- Testimonials/Reviews -->
         <section class="testimonials">
-            <h2>What Our Users Say</h2>
+            <h2>User Testimonials</h2>
             <div class="testimonial">
-                <p>"This product changed my life!"</p>
-                <cite>- Jane Doe</cite>
+                <p>"ChatApp has changed the way I communicate with my family. It's fast and reliable!"</p>
+                <p>- Alex</p>
             </div>
             <div class="testimonial">
-                <p>"Exceptional quality and service."</p>
-                <cite>- John Smith</cite>
+                <p>"I love the group chat feature. It's great for planning events with friends!"</p>
+                <p>- Sarah</p>
             </div>
         </section>
+    </main>
 
-        <!-- Video or Animation -->
-        <section class="video">
-            <h2>Watch Our Intro</h2>
-            <video controls>
-                <source src="intro-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </section>
+    <footer>
+        <p>&copy; 2024 ChatApp. All rights reserved.</p>
+        <nav>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </nav>
+    </footer>
 
-        <!-- Contact Form -->
-        <section class="contact-form">
-            <h2>Contact Us</h2>
-            <form action="submit_form.php" method="post">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send</button>
-            </form>
-        </section>
+</body>
 
-        <!-- Social Proof -->
-        <section class="social-proof">
-            <h2>Our Trusted Partners</h2>
-            <img src="award1.png" alt="Award 1">
-            <img src="award2.png" alt="Award 2">
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq">
-            <h2>Frequently Asked Questions</h2>
-            <div class="faq-item">
-                <h3>Question One?</h3>
-                <p>Answer to question one.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Question Two?</h3>
-                <p>Answer to question two.</p>
-            </div>
-        </section>
-
-        <!-- Accordion Section -->
-        <section class="accordion">
-            <h2>Accordion Section</h2>
-            <div class="accordion-item">
-                <h3 class="accordion-header">Item One</h3>
-                <div class="accordion-content">
-                    <p>Details about item one.</p>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h3 class="accordion-header">Item Two</h3>
-                <div class="accordion-content">
-                    <p>Details about item two.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Blog or News Section -->
-        <section class="blog">
-            <h2>Latest News</h2>
-            <article>
-                <h3>Blog Post Title</h3>
-                <p>Excerpt of the blog post.</p>
-                <a href="#">Read More</a>
-            </article>
-            <article>
-                <h3>Another Blog Post</h3>
-                <p>Excerpt of another blog post.</p>
-                <a href="#">Read More</a>
-            </article>
-        </section>
-
-  <!-- Footer -->
-  <footer>
-    <div>&copy; 2024 ChatApp</div>
-    <div class="social-links">
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-          <path d="M12 2.04C6.47 2.04 2 6.5 2 12.05c0 4.42 3.36 8.09 7.68 8.82v-6.23h-2.31V12h2.31v-1.5c0-2.34 1.38-3.63 3.5-3.63.72 0 1.5.09 2.18.15v2.51h-1.23c-1.24 0-1.62.75-1.62 1.57V12h2.78l-.44 2.64h-2.34v6.23c4.31-.73 7.68-4.4 7.68-8.82 0-5.55-4.47-10.01-10-10.01z"/>
-        </svg>
-      </a>
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-          <path d="M24 4.56c-.89.39-1.83.64-2.82.76a4.92 4.92 0 0 0 2.15-2.71 9.85 9.85 0 0 1-3.12 1.2 4.92 4.92 0 0 0-8.38 4.48A13.93 13.93 0 0 1 1.67 3.15a4.92 4.92 0 0 0 1.52 6.57 4.88 4.88 0 0 1-2.23-.61v.06c0 2.4 1.7 4.4 3.95 4.86-.41.11-.85.17-1.3.17-.32 0-.63-.03-.93-.09.64 2 2.5 3.44 4.7 3.48a9.88 9.88 0 0 1-6.1 2.11c-.4 0-.8-.02-1.19-.07a13.96 13.96 0 0 0 7.56 2.22c9.07 0 14.03-7.51 14.03-14.03 0-.21-.01-.43-.02-.64a10.02 10.02 0 0 0 2.46-2.55z"/>
-        </svg>
-      </a>
-      <a href="#">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-          <path d="M23.94 12.44c-.13-.61-.54-1.14-1.06-1.47l-.24-.15-5.05 3.05c-.26.16-.6.2-.91.12-.3-.09-.55-.3-.7-.58l-1.46-2.57a.99.99 0 0 1 0-.92l1.46-2.57a.996.996 0 0 1 .7-.58c.31-.08.65-.04.91.12l5.05 3.05c.55.33.93.9 1.06 1.47.12.57-.01 1.17-.36 1.65-.34.48-.82.77-1.34.81h-.07c-.55 0-1.06-.29-1.39-.75l-3.63-2.2v4.4l3.63-2.2c.33-.46.84-.75 1.39-.75h.07c.52-.04 1-.33 1.34-.81.35-.48.48-1.08.36-1.65zM0 0v24h24V0H0zm15.41 12.58l-1.46 2.57a1.992 1.992 0 0 1-.7.58 1.996 1.996 0 0 1-1.82 0l-1.46-2.57a.999.999 0 0 1 0-.92l1.46-2.57a1.996 1.996 0 0 1 1.82 0l1.46 2.57c.26.46.26 1.04 0 1.5z"/>
-        </svg>
-      </a>
-    </div>
-  </footer>
-</main>
+</html>
