@@ -180,3 +180,187 @@ nav a svg {
 .social-links a:hover svg {
   fill: #1DA1F2;      /* Change color on hover (example: Twitter blue) */
 }
+
+.blog {
+    padding: 50px 20px;
+}
+
+.blog article {
+    margin-bottom: 30px;
+}
+
+.blog h3 {
+    margin-bottom: 10px;
+}
+
+.blog a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.accordion {
+    padding: 50px 20px;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+}
+
+.accordion-header {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+}
+
+.accordion-content {
+    display: none;
+    padding: 15px;
+    background-color: #f1f1f1;
+}
+
+.faq {
+    padding: 50px 20px;
+}
+
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h3 {
+    cursor: pointer;
+}
+
+.faq-item p {
+    display: none;
+}
+
+.faq-item.active p {
+    display: block;
+}
+
+.social-proof {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.social-proof img {
+    max-width: 150px;
+    margin: 10px;
+}
+
+.contact-form {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1em;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.features {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.feature {
+    margin-bottom: 30px;
+}
+
+.feature h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.video {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+.testimonials {
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    margin-bottom: 20px;
+}
+
+.testimonial p {
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+.testimonial cite {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+    }
+}
+
+.hero {
+    background: url('hero-image.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+}
