@@ -267,81 +267,144 @@
   }
 </style>
 
-<header>
-  <div class="logo">ChatApp</div>
-  <nav>
-    <a href="#">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-      </svg>
-      Home
-    </a>
-    <a href="#">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-        <path d="M9 21h6v-1H9v1zm6.34-4h-.13A3 3 0 0 0 15 17H9a3 3 0 0 0-.21 0h-.13A5.99 5.99 0 0 0 2 12c0-3.31 2.69-6 6-6h8c3.31 0 6 2.69 6 6 0 2.98-2.16 5.44-5.02 5.94l-.64 1.06z"/>
-      </svg>
-      Features
-    </a>
-    <a href="#">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-        <path d="M20 8h-3V6a5 5 0 0 0-10 0v2H4v14h16V8zm-7 9h-2v-2h2v2zm0-4h-2v-4h2v4zm3-7h-8V6a3 3 0 0 1 6 0v2z"/>
-      </svg>
-      Contact
-    </a>
-    <a href="#">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-      </svg>
-      Login
-    </a>
-  </nav>
-</header>
+    <header>
+        <div class="logo">ChatApp</div>
+        <nav>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+                </svg>
+                Home
+            </a>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M9 21h6v-1H9v1zm6.34-4h-.13A3 3 0 0 0 15 17H9a3 3 0 0 0-.21 0h-.13A5.99 5.99 0 0 0 2 12c0-3.31 2.69-6 6-6h8c3.31 0 6 2.69 6 6 0 2.98-2.16 5.44-5.02 5.94l-.64 1.06z"/>
+                </svg>
+                Features
+            </a>
+            <a href="#contact">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M20 8h-3V6a5 5 0 0 0-10 0v2H4v14h16V8zm-7 9h-2v-2h2v2zm0-4h-2v-4h2v4zm3-7h-8V6a3 3 0 0 1 6 0v2z"/>
+                </svg>
+                Contact
+            </a>
+            <a href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+                Login
+            </a>
+        </nav>
+    </header>
 
-<main>
-  <!-- Hero Section -->
-  <div class="hero-section">
-    <h1>Welcome to ChatApp</h1>
-    <p>Connect with friends and family instantly, wherever you are.</p>
-    <a href="#" class="cta-button">Start Chatting</a>
-  </div>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your Compelling Headline</h1>
+                <p>A brief description that captures attention.</p>
+                <a href="#cta" class="cta-button">Call to Action</a>
+            </div>
+        </section>
 
-  <!-- Features Section -->
-  <section class="features-section">
-    <h2>Why Choose ChatApp?</h2>
-    <div class="features-list">
-      <div class="feature">
-        <h3>Fast Messaging</h3>
-        <p>Send messages in real-time, no delays!</p>
-      </div>
-      <div class="feature">
-        <h3>Secure Chats</h3>
-        <p>All chats are end-to-end encrypted for your safety.</p>
-      </div>
-      <div class="feature">
-        <h3>Group Conversations</h3>
-        <p>Create and manage group chats effortlessly.</p>
-      </div>
-    </div>
-  </section>
+        <!-- Features Section -->
+        <section class="features">
+            <h2>Features & Benefits</h2>
+            <div class="feature">
+                <h3>Feature One</h3>
+                <p>Description of feature one.</p>
+            </div>
+            <div class="feature">
+                <h3>Feature Two</h3>
+                <p>Description of feature two.</p>
+            </div>
+        </section>
 
- <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-      <h2>Contact Us</h2>
-      <p>Have questions or feedback? Reach out to us via our contact form or email us at support@chatapp.com.</p>
-      <!-- Contact Form (optional) -->
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
+        <!-- Testimonials/Reviews -->
+        <section class="testimonials">
+            <h2>What Our Users Say</h2>
+            <div class="testimonial">
+                <p>"This product changed my life!"</p>
+                <cite>- Jane Doe</cite>
+            </div>
+            <div class="testimonial">
+                <p>"Exceptional quality and service."</p>
+                <cite>- John Smith</cite>
+            </div>
+        </section>
+
+        <!-- Video or Animation -->
+        <section class="video">
+            <h2>Watch Our Intro</h2>
+            <video controls>
+                <source src="intro-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form">
+            <h2>Contact Us</h2>
+            <form action="submit_form.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+        <!-- Social Proof -->
+        <section class="social-proof">
+            <h2>Our Trusted Partners</h2>
+            <img src="award1.png" alt="Award 1">
+            <img src="award2.png" alt="Award 2">
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>Question One?</h3>
+                <p>Answer to question one.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Question Two?</h3>
+                <p>Answer to question two.</p>
+            </div>
+        </section>
+
+        <!-- Accordion Section -->
+        <section class="accordion">
+            <h2>Accordion Section</h2>
+            <div class="accordion-item">
+                <h3 class="accordion-header">Item One</h3>
+                <div class="accordion-content">
+                    <p>Details about item one.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h3 class="accordion-header">Item Two</h3>
+                <div class="accordion-content">
+                    <p>Details about item two.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog or News Section -->
+        <section class="blog">
+            <h2>Latest News</h2>
+            <article>
+                <h3>Blog Post Title</h3>
+                <p>Excerpt of the blog post.</p>
+                <a href="#">Read More</a>
+            </article>
+            <article>
+                <h3>Another Blog Post</h3>
+                <p>Excerpt of another blog post.</p>
+                <a href="#">Read More</a>
+            </article>
+        </section>
+    </main>
 
   <!-- Footer -->
   <footer>
